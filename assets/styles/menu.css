@@ -1,15 +1,17 @@
 /*Sección Menu*/
 .menu__header{
     position: fixed;
-    background-color: #000000;
+    background: #0F2027;
+    background: linear-gradient(to bottom, #00000080, #ffffff00);
+
     width: 100%;
-    height: 80px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 .menu__logo{
-    width: 50px;
+    width: 30px;
     vertical-align: middle;
 }
 

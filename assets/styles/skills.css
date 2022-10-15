@@ -1,0 +1,37 @@
+/*Sección Skills*/
+.skills{
+    padding: 64px 64px 64px 64px;
+}
+
+.skills__title{
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.skills__line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skills__box{
+    color: #fcfcfc;
+    width: 176px;
+    height: 174px;
+}
+
+.skills__box ul{
+    text-align: center;
+    padding: 0 12px;
+}
+
+.skills__img img{
+    width: 80px;
+    height: 80px;
+}
+
+.skills__name{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
