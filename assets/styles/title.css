@@ -1,0 +1,65 @@
+/*Sección Title*/
+.title{
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.4;
+    background: url("./fondo.jpg") no-repeat center / cover fixed;
+    z-index: -1;
+}
+
+.title__div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title__container{
+    text-align: center;
+}
+
+.title__profile{
+    width: 30%;
+    border-radius: 50%;
+}
+
+.title__bio{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.title__subsection{
+    font-size: 1.3rem;
+}
+
+.title__network{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.title__network__item a{
+    margin-right: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.social__network{
+    width: 20px;
+    vertical-align: middle;
+}
