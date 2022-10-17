@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./assets/styles/skills.css">
     <link rel="stylesheet" href="./assets/styles/hobbies.css">
     <link rel="stylesheet" href="./assets/styles/academic.css">
+    <link rel="stylesheet" href="./assets/styles/experience.css">
+    <link rel="stylesheet" href="./assets/styles/contact.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +28,7 @@
             <h2 class="menu__title"><img class="menu__logo" src="assets/PAPULOGO.png">APULO</h2>
             <nav>
                 <ul class="menu__list">
-                    <li class="menu__list__item"><a href="#sobre-mi">Sobre mi</a></li>
+                    <li id="item__a" class="menu__list__item"><a href="#sobre-mi">Sobre mi</a></li>
                     <li class="menu__list__item"><a href="#skills">Skills</a></li>
                     <li class="menu__list__item"><a href="#hobbies">Hobbies</a></li>
                     <li class="menu__list__item"><a href="#formacion">Formación</a></li>
@@ -200,16 +202,17 @@
         <!-- Sección de Experiencia Profesional/Proyectos-->
         <section class="experience" id="xp">
             <h2 class="experience__section__title" >Experiencia Profissional</h2>
+
             <div class="experiencie__box">
                 <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
                 <img class="experience__img" src="assets/IconosExperience/decod_print.png">
-                <div class="experience__info "
+                <div class="experience__info">
                     <h2 class="experience__title">Encriptador de texto</h2>
                     <h3 class="experience__text">Challenge Alura Codificador</h3>
                     <div class="experience__description">
                         <!-- Pon el enlace del proyecto en Github o GithubPages -->
                         <span class="experience__repo"><a href=""><button class="experiencia__boton--repo">Repositório</button></a></span>
-                        <span class="experience__demo"><a href=""><button class="experience__boton--demo">Ver demo</button></a></span>
+                        <span class="experience__demo"><a href=""><button class="experiencia__boton--demo">Ver demo</button></a></span>
                     </div>
                 </div>
             </div>  
@@ -217,34 +220,46 @@
             <div class="experiencie__box reverse">
                 <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
                 <img class="experience__img" src="assets/IconosExperience/forca_print.png">
-                <div class="experience__info"
+                <div class="experience__info">
                     <h2 class="experience__title">Juego creado con HTML y JavaScript</h2>
                     <h3 class="experience__text">Challenge Oracle </h3>
                     <div class="experience__description">
                         <!-- Pon el enlace del proyecto en Github o GithubPages -->
-                        <span class="experience__repo"><a href=""><button class="experiencia__botao--repo">Repositório</button></a></span>
-                        <span class="experience__demo"><a href=""><button class="experience__botao--demo">Ver demo</button></a></span>
+                        <span class="experience__repo"><a href=""><button class="experiencia__boton--repo">Repositório</button></a></span>
+                        <span class="experience__demo"><a href=""><button class="experiencia__boton--demo">Ver demo</button></a></span>
                     </div>
                 </div>
             </div>  
         </section>
         
         <!-- Sección de Contacto -->
-        <section class="formcontato" id="contacto">
-            <div  class="formcontato__contacto">
-                <div class="formcontato--esquerda">
-                    <img class="formcontato__img" src="assets\contact_image.png">
+        <section class="formcontacto" id="contacto">
+            <div  class="formcontacto__contacto">
+                <div class="formcontacto--esquerda">
+                    <img class="formcontacto__img" src="assets\contact_image.png">
                 </div>
-                <div class="formcontato__text">
-                    <h2 class="formcontato__title">Contacto</h2>
-                    <h3 class="formcontato__subtext">¿Quieres contactarme?</h3>
-                    <h3 class="formcontato__subtext">Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </h3>
-                    <form class="formcontato__form" name="form">
-                        <input class="formcontato__input" type="text" name="nombre" placeholder="Nombre">
-                        <input class="formcontato__input" type="email" name="email" placeholder="E-mail">
-                        <input class="formcontato__input" type="text" name="asunto" placeholder="Assunto">
-                        <textarea class="formcontato__textarea" rows="5" cols="40" id="mensagem" name="mensaje" placeholder="Mensaje"></textarea>
-                        <button type="submit" class="formcontato__botao">Enviar mensaje</button>
+                <div class="formcontacto__text">
+                    <h2 class="formcontacto__title">Contacto</h2>
+                    <p class="formcontacto__subtext">¿Quieres contactarme?</p>
+                    <p class="formcontacto__subtext">Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </p>
+                    <form class="formcontacto__form" name="form">
+                        <div class="form__control">
+                            <input class="formcontacto__input" type="text" name="nombre" required>
+                            <span class="formcontacto__textname">Nombre</span>
+                        </div>
+                        <div class="form__control">
+                            <input class="formcontacto__input" type="email" name="email" required>
+                            <span class="formcontacto__textname">E-mail</span>
+                        </div>
+                        <div class="form__control">
+                            <input class="formcontacto__input" type="text" name="asunto" required>
+                            <span class="formcontacto__textname">Asunto</span>
+                        </div>
+                        <div class="form__control">
+                            <textarea class="formcontacto__textarea" id="mensagem" name="mensaje"></textarea>
+                            <span class="formcontacto__textname">Mensaje</span>
+                        </div>
+                        <button type="submit" class="formcontacto__bot">Enviar mensaje</button>
                     </form>
                 </div>
             </div>
@@ -253,12 +268,13 @@
         <!-- Sección de Footer -->
         <section class="footer">
             <div class="footer__rodape">
-                <p>Desarrollado por Fulana de Tal</p>
+                <p>&copy; Desarrollado por Matias Gabriel Ortega</p>
                 <p>2022</p>
             </div>
         </section>
     </div>
     <!-- Script del documento JavaScript -->
     <script src="validacion.js"></script>
+    <script src="./assets/js/scroll.js"></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+/* experiencia*/
+
+.experience{
+    padding: 64px;
+}
+
+.experience__section__title{
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.experiencie__box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.experience__img{
+    width: 752px;
+}
+
+.experience__info{
+    margin: 24px;
+}
+
+.experiencia__boton--repo{
+    border: 1px solid #00c7c7;
+    background:#000000;
+    color: #00c7c7;
+    font-size: 1.3rem;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.experiencia__boton--demo{
+    border: none;
+    background:#00c7c7;
+    color: #000000;
+    font-size: 1.3rem;
+    padding: 12px;
+    cursor: pointer;
+}
