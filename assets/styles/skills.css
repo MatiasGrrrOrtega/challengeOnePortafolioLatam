@@ -1,6 +1,7 @@
 /*Sección Skills*/
 .skills{
     padding: 64px;
+    height: 100vh;
 }
 
 .skills__title{
@@ -11,7 +12,7 @@
 .skills__line{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    height: 60%;
 }
 
 .skills__box{
@@ -34,4 +35,9 @@
     font-weight: bold;
     margin-top: 10px;
     font-size: 1.1rem;
+}
+
+.skills__level{
+    margin-top: 5px;
+    color: #7e7e7e;
 }

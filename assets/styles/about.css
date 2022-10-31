@@ -3,6 +3,7 @@
 .about{
     background: #d3f0fa;
     padding:64px;
+    height: 100vh;
 }
 
 .about__container{

@@ -35,13 +35,29 @@
     font-size: 1.3rem;
     padding: 12px;
     cursor: pointer;
+    transition-property: background, color, border;
+    transition: .6s ease;
+}
+
+.experiencia__boton--repo:hover{
+    border-color: #00c7c7;
+    background:#00c7c7;
+    color: #000000;
 }
 
 .experiencia__boton--demo{
-    border: none;
+    border: 1px solid #000000;
     background:#00c7c7;
     color: #000000;
     font-size: 1.3rem;
     padding: 12px;
     cursor: pointer;
+    transition-property: background, color, border;
+    transition: .6s ease;
+}
+
+.experiencia__boton--demo:hover{
+    border-color: #00c7c7;
+    background:#000000;
+    color: #00c7c7;
 }

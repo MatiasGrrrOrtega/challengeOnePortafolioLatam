@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Referencia de la hoja de estilo de Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./assets/styles/menu.css">
     <link rel="stylesheet" href="./assets/styles/title.css">
@@ -14,64 +16,75 @@
     <link rel="stylesheet" href="./assets/styles/academic.css">
     <link rel="stylesheet" href="./assets/styles/experience.css">
     <link rel="stylesheet" href="./assets/styles/contact.css">
+    <link rel="stylesheet" href="./assets/styles/responsive.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Fuente del Proyecto Raleway -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <title> Mi Portafolio</title>
+    <title>Mi Portafolio</title>
 </head>
 <body>
     <div class="todo">
-        <!-- Sección del Menú  -->
-        <header class="menu__header">
-            <h2 class="menu__title"><img class="menu__logo" src="assets/PAPULOGO.png">APULO</h2>
-            <nav>
-                <ul class="menu__list">
-                    <li id="item__a" class="menu__list__item"><a href="#sobre-mi">Sobre mi</a></li>
-                    <li class="menu__list__item"><a href="#skills">Skills</a></li>
-                    <li class="menu__list__item"><a href="#hobbies">Hobbies</a></li>
-                    <li class="menu__list__item"><a href="#formacion">Formación</a></li>
-                    <li class="menu__list__item"><a href="#xp">Proyectos</a></li>
-                    <li class="menu__list__item"><a href="#contacto">Contacto@fulana.com</a></li>
+        <!-- Header -->
+        <header x-data="{ open: false }" class="header">
+            <!-- Logo -->
+            <h2 class="header__title"><img class="header__logo" src="assets/images/PAPULOGO.png">APULO</h2>
+
+            <!-- Boton abrir -->
+            <button class="header__button-nav--open" x-on:click="open = true">Abrir</button>
+            <!-- Navegador -->
+            <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+                <!-- Boton cerrar -->
+                <div class="nav__button" x-on:click="open = false">
+                    <button class="header__button-nav--close">Cerrar</button>
+                </div>
+                <!-- Menu -->
+                <ul class="nav__ul">
+                    <li class="nav__item"><a class="nav__link" href="#title">Inicio</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#sobre-mi">Sobre mi</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#skills">Skills</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#hobbies">Hobbies</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#formacion">Formación</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#xp">Proyectos</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </header>
-
+        <!-- Sección del Menú  -->
         <!-- Sección del Header/Title/Hero -->
-        <section class="title">
-            <img class="title__profile" src="assets/developer.jpg">
+        <section class="title" id="title">
+            <img class="title__profile" src="assets//images/developer.jpg">
             <div class="title__container">
                 <h2 class="title__bio">Hola, soy Matias Ortega y construyo paginas web</h2>
-                <p class="title__subsection">Soy formado en Desarrollo Web y actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</p>
+                <p class="title__subsection">Soy formado en Desarrollo Front-end y actualmente estoy participando del proyecto Oracle ONE en Alura Latam.</p>
                 <ul class="title__network">
-                    <li class="title__network__item"><a href="https://github.com/MatiasGrrrOrtega" target="_blank">Github <img class="social__network" src="assets/github.png"></a></li>
-                    <li class="title__network__item"><a href="https:/www.linkedin.com/in/matias-ortega-330121246/" target="_blank">Linkedin <img class="social__network" src="assets/linkedin.png"></a></li>
-                    <li class="title__network__item"><a href="https://www.instagram.com/matias_ortega2208/" target="_blank">Instagram <img class="social__network" src="assets/instagram.png"></a></li>
-                    <li class="title__network__item"><a href="#" target="_blank">Currículo <img class="social__network" src="assets/cv.png"></a></li>
+                    <li class="title__network__item"><a href="https://github.com/MatiasGrrrOrtega" target="_blank">Github <img class="social__network" src="./assets/images/github.png"></a></li>
+                    <li class="title__network__item"><a href="https:/www.linkedin.com/in/matias-ortega-330121246/" target="_blank">Linkedin <img class="social__network" src="./assets/images/linkedin.png"></a></li>
+                    <li class="title__network__item"><a href="https://www.instagram.com/matias_ortega2208/" target="_blank">Instagram <img class="social__network" src="./assets/images/instagram.png"></a></li>
+                    <li class="title__network__item"><a href="#" target="_blank">Currículo <img class="social__network" src="./assets/images/cv.png"></a></li>
                 </ul>
             </div>
         </section>
     
         <!-- Sección sobre mi -->
         <section class="about" id="sobre-mi">
-            <div class="about__container">
+            <div class="about__container" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <h3 class="about__title">Sobre mi</h3>
-                <p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia.  </p>
-                <p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque velit velit, volutpat semper dignissim dictum, imperdiet ut lacus. Quisque gravida ex a mattis pretium. Suspendisse potenti. Ut semper sagittis ligula et lacinia. Aenean sit amet felis venenatis, egestas metus vitae, aliquet metus.</p>
-                <!-- Si quieres, pon tú firma acá! -->
-                <img src="assets\signature.png">
+                <p class="about__paragraph">Soy un estudiante de Desarrollo de Videojuegos en la Unjiversidad Nacional de Jujuy Argentina - Facultad de Ingenieria, con conocimientos de desarrollo de Videojuegos en Unity3D y en Desarrollo web. Me gusta aprender de las personas y de cosas nuevas sobre desarrollo web y videojuegos. Me considero una persona curiosa.</p>
+                <p class="about__paragraph">Me gustaria en el futuro ser un desarrollador full stack y trabajar en el exterior, por lo que siempre estoy buscando nuevas formas de mejorar mis habilidades y aprender nuevas tecnologías.</p>
             </div>
         </section>
 
         <!-- Sección de Skills -->
         <section class="skills" id="skills">
-            <h3 class="skills__title">Skills</h3>
-            <div class="skills__line">
+            <h2 class="skills__title">Skills</h2>
+            <div class="skills__line" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <div class="skills__box">
                     <ul>
                         <li class="skills__img"><img src="assets/IconosSkills/html.png" alt="icon-html"></li>
-                        <li class="skills__name"> HTML 5</li>
+                        <li class="skills__name">HTML 5</li>
+                        <li class="skills__level">Avanzado</li>
                     </ul>
                 </div>
 
@@ -79,6 +92,7 @@
                     <ul>
                         <li class="skills__img"> <img src="assets/IconosSkills/js-icon.png" alt="icon-javascript"></li>
                         <li class="skills__name">Javascript</li>
+                        <li class="skills__level">Intermedio</li>
                     </ul>
                 </div>
 
@@ -86,6 +100,7 @@
                     <ul>
                         <li class="skills__img"> <img src="assets/IconosSkills/php-icon.png" alt="icon-php"></li>
                         <li class="skills__name">PHP</li>
+                        <li class="skills__level">Intermedio</li>
                     </ul>
                 </div>
 
@@ -93,6 +108,7 @@
                     <ul>
                         <li class="skills__img"><img src="assets/IconosSkills/nodejs-icon.png" alt="icon-nodejs"></li>
                         <li class="skills__name">Node JS</li>
+                        <li class="skills__level">Intermedio</li>
                     </ul>
                 </div>
 
@@ -100,6 +116,7 @@
                     <ul>
                         <li class="skills__img"> <img src="assets/IconosSkills/react-icon.png" alt="icon-react"> </li>
                         <li class="skills__name">React</li>
+                        <li class="skills__level">Basico</li>
                     </ul>
                 </div>
 
@@ -107,6 +124,47 @@
                     <ul>
                         <li class="skills__img"> <img src="assets/IconosSkills/css-icon.png" alt="icon-css"> </li>
                         <li class="skills__name">CSS</li>
+                        <li class="skills__level">Intermedio</li>
+                    </ul>
+                </div>
+
+                <div class="skills__box">
+                    <ul>
+                        <li class="skills__img"> <img src="assets/IconosSkills/bootstrap-icon.png" alt="icon-bootstrap"> </li>
+                        <li class="skills__name">Bootstrap</li>
+                        <li class="skills__level">Basico</li>
+                    </ul>
+                </div>
+                
+                <div class="skills__box">
+                    <ul>
+                        <li class="skills__img"> <img src="assets/IconosSkills/git-icon.png" alt="icon-git"> </li>
+                        <li class="skills__name">Git</li>
+                        <li class="skills__level">Intermedio</li>
+                    </ul>
+                </div>
+
+                <div class="skills__box">
+                    <ul>
+                        <li class="skills__img"> <img src="assets/IconosSkills/mysql-icon.png" alt="icon-mysql"> </li>
+                        <li class="skills__name">MySql</li>
+                        <li class="skills__level">Basico</li>
+                    </ul>
+                </div>
+
+                <div class="skills__box">
+                    <ul>
+                        <li class="skills__img"> <img src="assets/IconosSkills/figma-icon.png" alt="icon-figma"> </li>
+                        <li class="skills__name">Figma</li>
+                        <li class="skills__level">Basico</li>
+                    </ul>
+                </div>
+
+                <div class="skills__box">
+                    <ul>
+                        <li class="skills__img"> <img src="assets/IconosSkills/unity-icon.png" alt="icon-figma"> </li>
+                        <li class="skills__name">Unity</li>
+                        <li class="skills__level">Intermedio</li>
                     </ul>
                 </div>
             </div>
@@ -115,7 +173,7 @@
         <!-- Sección de Hobbies -->
         <section class="hobbies" id="hobbies">
             <h3 class="hobbies__title">Hobbies</h3>
-            <div class="hobbies__line">
+            <div class="hobbies__line" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <div class="hobbies__box">
                     <ul>
                         <li class="hobbies__img"><img src="assets/IconosHobbies/ejercicio.png" alt="icon-ejercicio"></li>
@@ -153,8 +211,14 @@
 
                 <div class="hobbies__box">
                     <ul>
-                        <li class="hobbies__img"> <img src="assets/IconosHobbies/music.png" alt="icon-music"></li>
+                        <li class="hobbies__img"> <img src="assets/IconosHobbies/music-icon.png" alt="icon-music"></li>
                         <li class="hobbies__name">Oir Musica</li>
+                    </ul>
+                </div>
+                <div class="hobbies__box">
+                    <ul>
+                        <li class="hobbies__img"> <img src="assets/IconosHobbies/practicar.png" alt="icon-code"></li>
+                        <li class="hobbies__name">Code</li>
                     </ul>
                 </div>
             </div>
@@ -163,10 +227,9 @@
         <!-- Sección de Formación académica -->
         <section class="academic" id="formacion">
             <h2 class="academic__title" >Formación académica</h2>
-            <div class="academic__courses">
+            <div class="academic__courses" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <div class="academic__courses__box">
                     <ul class="academic__courses__list">
-                        <!-- Pon el logotipo de la institución de formación -->
                         <li class="academic__courses__item__img"><img src="assets/IconosFormacion/ufpr_logo.png"></li>
                         <li class="academic__courses__item__title"><h4>Análisis de datos</h4></li>
                         <li class="academic__courses__item__subtitle"><p>En curos - UFPR - 2022</p></li>
@@ -175,7 +238,7 @@
                 <div class="academic__courses__box">
                     <ul class="academic__courses__list">
                         <!--Pon el logotipo de la institución de formación -->
-                        <li class="academic__courses__item__img"><img src="assets/IconosFormacion/alura_logo.png"></li>
+                        <div class="academic__courses__item__img"><img src="assets/IconosFormacion/alura_logo.png"></div>
                         <li class="academic__courses__item__title"><h4>Formación en UX Design</h4></li>
                         <li class="academic__courses__item__subtitle"><p>En curso - Alura - 2022</p></li>
                     </ul>
@@ -201,9 +264,11 @@
 
         <!-- Sección de Experiencia Profesional/Proyectos-->
         <section class="experience" id="xp">
-            <h2 class="experience__section__title" >Experiencia Profissional</h2>
+            <h2 class="experience__section__title" >Experiencia Profesional</h2>
 
-            <div class="experiencie__box">
+            <div class="experiencie__box" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
                 <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
                 <img class="experience__img" src="assets/IconosExperience/decod_print.png">
                 <div class="experience__info">
@@ -211,32 +276,35 @@
                     <h3 class="experience__text">Challenge Alura Codificador</h3>
                     <div class="experience__description">
                         <!-- Pon el enlace del proyecto en Github o GithubPages -->
-                        <span class="experience__repo"><a href=""><button class="experiencia__boton--repo">Repositório</button></a></span>
-                        <span class="experience__demo"><a href=""><button class="experiencia__boton--demo">Ver demo</button></a></span>
+                        <span class="experience__repo"><a href="https://github.com/MatiasGrrrOrtega/challengeOneCodificador2" target="_blank"><button class="experiencia__boton--repo">Repositório</button></a></span>
+                        <span class="experience__demo"><a href="https://matiasgrrrortega.github.io/challengeOneCodificador2/" target="_blank"><button class="experiencia__boton--demo">Ver demo</button></a></span>
                     </div>
                 </div>
             </div>  
 
-            <div class="experiencie__box reverse">
+            <div class="experiencie__box reverse" data-aos="flip-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
                 <!-- Pon el logotipo/captura de pantalla de tu proyecto -->
                 <img class="experience__img" src="assets/IconosExperience/forca_print.png">
                 <div class="experience__info">
                     <h2 class="experience__title">Juego creado con HTML y JavaScript</h2>
-                    <h3 class="experience__text">Challenge Oracle </h3>
+                    <h3 class="experience__text">Challenge Oracle</h3>
                     <div class="experience__description">
                         <!-- Pon el enlace del proyecto en Github o GithubPages -->
-                        <span class="experience__repo"><a href=""><button class="experiencia__boton--repo">Repositório</button></a></span>
-                        <span class="experience__demo"><a href=""><button class="experiencia__boton--demo">Ver demo</button></a></span>
+                        <span class="experience__repo"><a href="https://github.com/MatiasGrrrOrtega/challengeOneAhorcado2" target="_blank"><button class="experiencia__boton--repo">Repositório</button></a></span>
+                        <span class="experience__demo"><a href="https://matiasgrrrortega.github.io/challengeOneAhorcado2/" target="_blank"><button class="experiencia__boton--demo">Ver demo</button></a></span>
                     </div>
                 </div>
-            </div>  
+            </div>
+            <h3>Proximamente mas Proyectos...</h3>
         </section>
         
         <!-- Sección de Contacto -->
         <section class="formcontacto" id="contacto">
             <div  class="formcontacto__contacto">
-                <div class="formcontacto--esquerda">
-                    <img class="formcontacto__img" src="assets\contact_image.png">
+                <div class="formcontacto__izquierda">
+                    <img class="formcontacto__img" src="assets/images/contact_image.png">
                 </div>
                 <div class="formcontacto__text">
                     <h2 class="formcontacto__title">Contacto</h2>
@@ -244,22 +312,22 @@
                     <p class="formcontacto__subtext">Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </p>
                     <form class="formcontacto__form" name="form">
                         <div class="form__control">
+                            <p class="formcontacto__textname">Nombre</p>
                             <input class="formcontacto__input" type="text" name="nombre" required>
-                            <span class="formcontacto__textname">Nombre</span>
                         </div>
                         <div class="form__control">
+                            <p class="formcontacto__textname">E-mail</p>
                             <input class="formcontacto__input" type="email" name="email" required>
-                            <span class="formcontacto__textname">E-mail</span>
                         </div>
                         <div class="form__control">
+                            <p class="formcontacto__textname">Asunto</p>
                             <input class="formcontacto__input" type="text" name="asunto" required>
-                            <span class="formcontacto__textname">Asunto</span>
                         </div>
                         <div class="form__control">
+                            <p class="formcontacto__textname">Mensaje</p>
                             <textarea class="formcontacto__textarea" id="mensagem" name="mensaje"></textarea>
-                            <span class="formcontacto__textname">Mensaje</span>
                         </div>
-                        <button type="submit" class="formcontacto__bot">Enviar mensaje</button>
+                        <button type="submit" class="formcontacto__boton">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -268,13 +336,14 @@
         <!-- Sección de Footer -->
         <section class="footer">
             <div class="footer__rodape">
-                <p>&copy; Desarrollado por Matias Gabriel Ortega</p>
-                <p>2022</p>
+                <p>&copy; Desarrollado por Matias Gabriel Ortega - 2022</p>
             </div>
         </section>
     </div>
     <!-- Script del documento JavaScript -->
     <script src="validacion.js"></script>
-    <script src="./assets/js/scroll.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>
