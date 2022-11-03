@@ -144,6 +144,7 @@
         font-size: .9rem;
         margin-top: 3px;
         margin-bottom: 3px;
+        text-align: center;
     }
 
     .academic__courses__item__subtitle p{
@@ -159,6 +160,10 @@
 
     .experiencie__box{
         flex-direction: column;
+        text-align: center;
+    }
+
+    .experience h3{
         text-align: center;
     }
 

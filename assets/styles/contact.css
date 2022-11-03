@@ -4,6 +4,7 @@
     padding: 64px;
     background: #d3f0fa;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 100vh;
 }
@@ -51,10 +52,17 @@
 
 .form__control .formcontacto__textarea{
     resize: none;
+    font-family: sans-serif;
     height: 150px;
+    width: 95%;
+    padding: 12px 12px 8px 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+    color: #000;
 }
 
-.form__control .formcontacto__textarea,
 .form__control .formcontacto__input{
     width: 95%;
     padding: 12px 12px 8px 12px;
@@ -70,7 +78,7 @@
     border-bottom: 2px solid #2A7AE4;
 }
 
-.form__control .formcontacto__textname{
+.form__control .formcontacto__text{
     font-size: .9em;
     margin: 3px 0;
 }
@@ -83,4 +91,27 @@
     background-color: #2A7AE4;
     color: #d3f0fa;
     font-size: 1.1em;
+    transition: background .6s ease;
+}
+
+.formcontacto .formcontacto__boton:hover{
+    background-color: #1b55a1;
+    cursor: pointer;
+}
+
+.mensajeEnviado{
+    display: none;
+    text-align: center;
+    padding: 12px;
+    font-size: larger;
+    font-weight: bold;
+    color: #01d11d;
+}
+
+.info--correct{
+    background-color: #02ff2493;
+}
+
+.info--incorrect{
+    background-color: #ff110073;
 }

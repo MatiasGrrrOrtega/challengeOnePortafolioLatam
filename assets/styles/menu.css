@@ -32,3 +32,19 @@
     background: #00ddff;
     color: #000000;
 }
+
+.header__button-nav--open{
+    background-color: #eb1cd9;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+.header__button-nav--close{
+    background-color: #32eefc;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 8px;
+    cursor: pointer;
+}

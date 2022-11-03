@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/site.webmanifest">
     <!-- Referencia de la hoja de estilo de Css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -32,12 +36,12 @@
             <h2 class="header__title"><img class="header__logo" src="assets/images/PAPULOGO.png">APULO</h2>
 
             <!-- Boton abrir -->
-            <button class="header__button-nav--open" x-on:click="open = true">Abrir</button>
+            <button class="header__button-nav--open" x-on:click="open = true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -7 24 24" width="24" fill="currentColor"><path d="M1 0h5a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm7 8h5a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2zM1 4h12a1 1 0 0 1 0 2H1a1 1 0 1 1 0-2z"></path></svg></button>
             <!-- Navegador -->
             <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
                 <!-- Boton cerrar -->
                 <div class="nav__button" x-on:click="open = false">
-                    <button class="header__button-nav--close">Cerrar</button>
+                    <button class="header__button-nav--close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="24" fill="currentColor"><path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z"></path><path d="M11.414 10l2.829 2.828a1 1 0 0 1-1.415 1.415L10 11.414l-2.828 2.829a1 1 0 1 1-1.415-1.415L8.586 10 5.757 7.172a1 1 0 0 1 1.415-1.415L10 8.586l2.828-2.829a1 1 0 0 1 1.415 1.415L11.414 10z"></path></svg></button>
                 </div>
                 <!-- Menu -->
                 <ul class="nav__ul">
@@ -51,8 +55,8 @@
                 </ul>
             </nav>
         </header>
-        <!-- Sección del Menú  -->
-        <!-- Sección del Header/Title/Hero -->
+
+        <!-- Sección del Title -->
         <section class="title" id="title">
             <img class="title__profile" src="assets//images/developer.jpg">
             <div class="title__container">
@@ -62,7 +66,7 @@
                     <li class="title__network__item"><a href="https://github.com/MatiasGrrrOrtega" target="_blank">Github <img class="social__network" src="./assets/images/github.png"></a></li>
                     <li class="title__network__item"><a href="https:/www.linkedin.com/in/matias-ortega-330121246/" target="_blank">Linkedin <img class="social__network" src="./assets/images/linkedin.png"></a></li>
                     <li class="title__network__item"><a href="https://www.instagram.com/matias_ortega2208/" target="_blank">Instagram <img class="social__network" src="./assets/images/instagram.png"></a></li>
-                    <li class="title__network__item"><a href="#" target="_blank">Currículo <img class="social__network" src="./assets/images/cv.png"></a></li>
+                    <li class="title__network__item"><a href="./assets/document/CV.pdf" target="_blank">Currículo <img class="social__network" src="./assets/images/cv.png"></a></li>
                 </ul>
             </div>
         </section>
@@ -255,7 +259,7 @@
                     <ul class="academic__courses__list">
                         <!-- Pon el logotipo de la institución de formación -->
                         <li class="academic__courses__item__img"><img src="assets/IconosFormacion/fi-logo.png"></li>
-                        <li class="academic__courses__item__title"><h4>Diseño de VideoJuegos</h4></li>
+                        <li class="academic__courses__item__title"><h4>Desarrollo de VideoJuegos</h4></li>
                         <li class="academic__courses__item__subtitle"><p>En curso - Facultad de Ingenieria - UNJU - 2022</p></li>
                     </ul>
                 </div>
@@ -310,24 +314,25 @@
                     <h2 class="formcontacto__title">Contacto</h2>
                     <p class="formcontacto__subtext">¿Quieres contactarme?</p>
                     <p class="formcontacto__subtext">Complete el siguiente formulario y me pondré en contacto con usted lo antes posible. </p>
-                    <form class="formcontacto__form" name="form">
+                    <form id="form" class="formcontacto__form" name="form">
                         <div class="form__control">
-                            <p class="formcontacto__textname">Nombre</p>
-                            <input class="formcontacto__input" type="text" name="nombre" required>
+                            <label for="name" class="formcontacto__text">Nombre</label>
+                            <input id="name" class="info formcontacto__input" type="text" name="name" minlength="1" maxlength="40" required>
                         </div>
                         <div class="form__control">
-                            <p class="formcontacto__textname">E-mail</p>
-                            <input class="formcontacto__input" type="email" name="email" required>
+                            <label for="email" class="formcontacto__text">E-mail</label>
+                            <input id="email" class="info formcontacto__input" type="email" name="email" required>
                         </div>
                         <div class="form__control">
-                            <p class="formcontacto__textname">Asunto</p>
-                            <input class="formcontacto__input" type="text" name="asunto" required>
+                            <label for="affair" class="formcontacto__text">Asunto</label>
+                            <input id="affair" class="info formcontacto__input" type="text" name="affair" minlength="1" maxlength="80" required>
                         </div>
                         <div class="form__control">
-                            <p class="formcontacto__textname">Mensaje</p>
-                            <textarea class="formcontacto__textarea" id="mensagem" name="mensaje"></textarea>
+                            <label for="message" class="formcontacto__text">Mensaje</label>
+                            <textarea id="message" class="info formcontacto__textarea" name="message" minlength="1" maxlength="1500" required></textarea>
                         </div>
                         <button type="submit" class="formcontacto__boton">Enviar</button>
+                        <div class="mensajeEnviado">Formulario enviado exitosamente!</div>
                     </form>
                 </div>
             </div>
@@ -341,7 +346,7 @@
         </section>
     </div>
     <!-- Script del documento JavaScript -->
-    <script src="validacion.js"></script>
+    <script src="/validacion.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
